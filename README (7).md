@@ -1,70 +1,92 @@
-# 📊 Interactive Business Dashboard in Streamlit
+# Loan Default Risk with Business Cost Optimization
 
-## 🚀 Project Overview
-This project is an **Interactive Business Intelligence (BI) Dashboard** built using [Streamlit](https://streamlit.io/).  
-It allows users to explore **sales, profit, and segment-wise performance** from the **Global Superstore Dataset**.
+## 📌 Objective
 
-## 🎯 Objectives
-- Build an interactive Streamlit dashboard with filters.
-- Display KPIs such as **Total Sales, Profit, and Top 5 Customers**.
-- Provide **visual insights** into business performance.
-- Demonstrate **data storytelling** and user interactivity.
+The goal of this project is to **predict the likelihood of loan
+default** and optimize the **decision threshold** using cost-benefit
+analysis.\
+This ensures that business decisions (approving or rejecting loans)
+minimize financial loss.
 
-## 🗂️ Dataset
-- **Global Superstore Dataset** (CSV format).
-- Contains fields like `Order Date`, `Region`, `Category`, `Sub-Category`, `Sales`, `Profit`, and `Customer Name`.
+## 📊 Dataset
 
-## ⚙️ Features
-- Filter data by:
-  - **Region**
-  - **Category**
-  - **Sub-Category**
-- KPI cards:
-  - ✅ Total Sales
-  - ✅ Total Profit
-  - ✅ Top 5 Customers by Sales
-- Interactive charts:
-  - 📈 Sales by Category
-  - 📊 Profit by Sub-Category
-  - 🗺️ Region-wise performance
+This project uses the **UCI Credit Card Default Dataset**.\
+- **Rows:** \~30,000 clients\
+- **Columns:**\
+- `ID` → Unique client ID (dropped during preprocessing)\
+- `LIMIT_BAL` → Amount of credit granted\
+- `SEX`, `EDUCATION`, `MARRIAGE`, `AGE` → Demographic features\
+- `PAY_0`--`PAY_6` → Past monthly payment delays\
+- `BILL_AMT1`--`BILL_AMT6` → Previous bill statements\
+- `PAY_AMT1`--`PAY_AMT6` → Previous payments made\
+- `default.payment.next.month` → **Target (1 = Default, 0 = No
+Default)**
 
-## 🛠️ Tech Stack
-- **Python 3.x**
-- [Streamlit](https://docs.streamlit.io/)
-- [Pandas](https://pandas.pydata.org/)
-- [Matplotlib](https://matplotlib.org/) / [Plotly](https://plotly.com/python/)  
+## 🛠 Steps Performed
+
+1.  **Data Preprocessing**
+    -   Dropped irrelevant column (`ID`)\
+    -   Handled missing values\
+    -   One-hot encoded categorical variables\
+    -   Scaled numerical features
+2.  **Modeling**
+    -   Logistic Regression (baseline)\
+    -   CatBoost Classifier (if available)
+3.  **Evaluation Metrics**
+    -   Accuracy, Precision, Recall, F1-Score, ROC-AUC\
+    -   Confusion Matrix
+4.  **Business Cost Optimization**
+    -   Defined costs:
+        -   False Positive (rejecting a good client) = 500\
+        -   False Negative (accepting a bad client) = 2000\
+    -   Adjusted classification threshold to **minimize expected
+        business cost**
+5.  **Feature Importance**
+    -   Top features identified using CatBoost
+
+## 📈 Skills Gained
+
+-   Binary classification modeling\
+-   Cost-sensitive evaluation\
+-   Risk modeling and credit scoring\
+-   Feature importance analysis
+
+## 🚀 How to Run
+
+1.  Clone the repository or download the project files.\
+
+2.  Install dependencies:
+
+    ``` bash
+    pip install pandas numpy scikit-learn matplotlib seaborn catboost
+    ```
+
+3.  Run the Python script or Jupyter Notebook:
+
+    ``` bash
+    python loan_default_cost_optimization.py
+    ```
+
+    or
+
+    ``` bash
+    jupyter notebook loan_default_cost_optimization.ipynb
+    ```
+
+## 📊 Outputs
+
+-   Model performance metrics\
+-   Cost vs Threshold optimization curve\
+-   Optimal decision threshold\
+-   Feature importance visualization (CatBoost)
 
 ## 📂 Project Structure
-```
-📁 project-folder
- ┣ 📄 app.py           # Main Streamlit application
- ┣ 📄 Global_Superstore.csv   # Dataset
- ┣ 📄 README.md        # Project documentation
-```
 
-## ▶️ How to Run
-1. Clone this repository or download the files.
-2. Install dependencies:
-   ```bash
-   pip install streamlit pandas matplotlib plotly
-   ```
-3. Run the Streamlit app:
-   ```bash
-   streamlit run app.py
-   ```
-4. Open in browser: [http://localhost:8501](http://localhost:8501)
+    ├── Loan_Default_Cost_Optimization.py   # Full training & evaluation script
+    ├── README.md                           # Project documentation
+    ├── UCI_Credit_Card.csv                 # Dataset (place here)
 
-## 📊 Example KPIs
-- Total Sales: **$2.3M**
-- Total Profit: **$286K**
-- Top 5 Customers by Sales displayed in table/chart.
+------------------------------------------------------------------------
 
-## 📚 Skills Gained
-- Business Intelligence dashboarding
-- Data storytelling
-- Streamlit interactivity
-- Visual KPI analysis
-
----
-
-👨‍💻 Developed as part of a **Data Science & Analytics learning project**.
+👨‍💻 **Author:** Fanoltas\
+📌 AI & Data Science Enthusiast \| Data Analyst in progress
