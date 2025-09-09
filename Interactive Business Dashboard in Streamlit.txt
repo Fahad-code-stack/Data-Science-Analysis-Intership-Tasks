@@ -1,20 +1,20 @@
-# 📊 Interactive Business Dashboard in Streamlit
+ 📊 Interactive Business Dashboard in Streamlit
 
-## 🚀 Project Overview
+ 🚀 Project Overview
 This project is an **Interactive Business Intelligence (BI) Dashboard** built using [Streamlit](https://streamlit.io/).  
 It allows users to explore **sales, profit, and segment-wise performance** from the **Global Superstore Dataset**.
 
-## 🎯 Objectives
+ 🎯 Objectives
 - Build an interactive Streamlit dashboard with filters.
 - Display KPIs such as **Total Sales, Profit, and Top 5 Customers**.
 - Provide **visual insights** into business performance.
 - Demonstrate **data storytelling** and user interactivity.
 
-## 🗂️ Dataset
+ 🗂️ Dataset
 - **Global Superstore Dataset** (CSV format).
 - Contains fields like `Order Date`, `Region`, `Category`, `Sub-Category`, `Sales`, `Profit`, and `Customer Name`.
 
-## ⚙️ Features
+ ⚙️ Features
 - Filter data by:
   - **Region**
   - **Category**
@@ -28,21 +28,15 @@ It allows users to explore **sales, profit, and segment-wise performance** from 
   - 📊 Profit by Sub-Category
   - 🗺️ Region-wise performance
 
-## 🛠️ Tech Stack
+ 🛠️ Tech Stack
 - **Python 3.x**
 - [Streamlit](https://docs.streamlit.io/)
 - [Pandas](https://pandas.pydata.org/)
 - [Matplotlib](https://matplotlib.org/) / [Plotly](https://plotly.com/python/)  
 
-## 📂 Project Structure
-```
-📁 project-folder
- ┣ 📄 app.py           # Main Streamlit application
- ┣ 📄 Global_Superstore.csv   # Dataset
- ┣ 📄 README.md        # Project documentation
-```
 
-## ▶️ How to Run
+
+ ▶️ How to Run
 1. Clone this repository or download the files.
 2. Install dependencies:
    ```bash
@@ -54,17 +48,15 @@ It allows users to explore **sales, profit, and segment-wise performance** from 
    ```
 4. Open in browser: [http://localhost:8501](http://localhost:8501)
 
-## 📊 Example KPIs
+ 📊 Example KPIs
 - Total Sales: **$2.3M**
 - Total Profit: **$286K**
 - Top 5 Customers by Sales displayed in table/chart.
 
-## 📚 Skills Gained
+ 📚 Skills Gained
 - Business Intelligence dashboarding
 - Data storytelling
 - Streamlit interactivity
 - Visual KPI analysis
 
----
 
-👨‍💻 Developed as part of a **Data Science & Analytics learning project**.
